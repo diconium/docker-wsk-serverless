@@ -6,7 +6,11 @@ RUN apt-get update && \
         jq
 
 RUN npm install -g serverless --silent && \
-    npm install -g lerna
+    npm install -g serverless-openwhisk && \
+    npm install -g serverless-webpack && \
+    npm install -g lerna && \
+    npm install -g typescript && \
+    npm install -g webpack
 
 RUN set -ex \
     && curl -sSL https://github.com/apache/incubator-openwhisk-cli/releases/download/latest/OpenWhisk_CLI-latest-linux-386.tgz | tar xz \
